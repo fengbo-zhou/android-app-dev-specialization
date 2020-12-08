@@ -6,8 +6,25 @@ package mooc.vandy.java4android.buildings.logic;
 public class Cottage
        extends House {
 
-    // TODO - Put your code here.
+    private boolean mSecondFloor;
 
-    
+    public Cottage(int dimension, int lotLength, int lotWidth) {
+        super(dimension, dimension, lotLength, lotWidth);
+    }
+
+    public Cottage(int dimension, int lotLength, int lotWidth, String owner, boolean
+            secondFloor) {
+        super(dimension,dimension,lotLength,lotWidth,owner);
+        mSecondFloor = secondFloor;
+    }
+
+    public boolean hasSecondFloor() {
+        return mSecondFloor;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " is a " + (mSecondFloor ? "two story " : "") + "cottage";
+    }
 }
 

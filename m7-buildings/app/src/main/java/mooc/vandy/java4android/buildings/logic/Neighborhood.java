@@ -12,6 +12,20 @@ import mooc.vandy.java4android.buildings.ui.OutputInterface;
  */
 public final class Neighborhood {
 
-    // TODO - Put your code here.
-    
+    private Neighborhood() {}
+
+    public static void print(Building[] buildings, String header, OutputInterface out) {
+        out.println(header);
+        for (Building building : buildings) {
+            out.println(building);
+        }
+    }
+
+    public static int calcArea(Building[] buildings) {
+        int ares = 0;
+        for (Building building : buildings) {
+            ares += building.calcLotArea();
+        }
+        return ares;
+    }
 }
